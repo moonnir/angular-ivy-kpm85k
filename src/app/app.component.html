@@ -1,0 +1,23 @@
+<h1>Language App</h1>
+
+<input type="text" [(ngModel)]="language" />
+
+<button (click)="addLanguage()">Add</button>
+<button (click)="addLanguageFirst()">Add First</button>
+
+<button (click)="delFirstLanguage()">Delete</button>
+<button (click)="delLastLanguage()">Delete Last</button>
+<p>
+  New Language is <strong>{{ language | uppercase }}</strong>
+</p>
+
+<h2>List of Language</h2>
+<ul>
+  <li *ngFor="let lang of listOfLanguage">
+    {{ lang | uppercase }}
+  </li>
+</ul>
+
+<strong *ngIf="listOfLanguage.length > 3">
+  Congrats!. You know more than 3 languages of World.
+</strong>
